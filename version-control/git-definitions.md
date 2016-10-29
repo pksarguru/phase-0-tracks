@@ -10,3 +10,5 @@
     - A commit is when you're uploading a file back to your repository and a record is kept of it.  A commit message is essentially the manual messages you're using to tag that message.  A good commit message describes the changes you've actually made in a sufficient, yet specific, manner.
 * What is a merge conflict?
     - Merge conflict occurs when you attempt to merge a branch of a repository.  The conflicts can be different: disparate edits of an identical code element or an element being deleted from one of the branches.
+
+I'M EDITING THE DOCUMENT FOR THE TEACHER!
