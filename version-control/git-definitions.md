@@ -12,3 +12,4 @@
     - Merge conflict occurs when you attempt to merge a branch of a repository.  The conflicts can be different: disparate edits of an identical code element or an element being deleted from one of the branches.
 
 I'M EDITING THE DOCUMENT FOR THE TEACHER!
+
