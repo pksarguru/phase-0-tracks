@@ -6,9 +6,10 @@
 </head>
 <body>
 
-<form name="SuperSmashBros." action="success.html" method="post">
+<form name="SuperSmashBros" action="success.html" method="post">
 
 <div>
+<label>Pick your Favorite Smash Character</label>
 <select>
   <option value="Link">Link</option>
   <option value="Mario">Mario</option>
@@ -18,9 +19,14 @@
 </div>
 
 <div>
-<textarea name="WriteIn" rows="50" cols="10">Write in Candidate</textarea>
+  <label>How good are you at Smash:</label>
+  <input type="number" name="rating">
 </div>
-  
+
+<div>
+<textarea name="WriteIn" rows="10" cols="50">Write in Candidate</textarea>
+</div>
+
 </form>
 
 </body>
