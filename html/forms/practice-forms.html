@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Super Smash Bros Survey</title>
+</head>
+<body>
+
+<form name="SuperSmashBros" action="success.html" method="post">
+
+<div>
+<label>Pick your Favorite Smash Character</label>
+<select name="character">
+  <option value="Link">Link</option>
+  <option value="Mario">Mario</option>
+  <option value="Nes">Nes</option>
+  <option value="Fox">Fox</option>
+</select>
+</div>
+
+<div>
+  <label>How good are you at Smash (1-10):</label>
+  <input type="number" name="rating" min="0" max="10">
+</div>
+
+<div>
+  <label>When did you start playing Smash?</label>
+  <input type="date" name="date">
+</div>
+
+<div>
+  <input type="checkbox" name="checkout">Are you ready to get REKT?
+</div>
+
+<div>
+<textarea name="Comments" rows="10" cols="50">Comments</textarea>
+</div>
+
+<button type="submit">I'm ready to Smash</button>
+
+</form>
+
+</body>
+</html>
