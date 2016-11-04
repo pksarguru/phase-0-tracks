@@ -19,13 +19,20 @@
 </div>
 
 <div>
-  <label>How good are you at Smash:</label>
-  <input type="number" name="rating">
+  <label>How good are you at Smash (1-10):</label>
+  <input type="number" name="rating" min="0" max="10">
 </div>
 
 <div>
-<textarea name="WriteIn" rows="10" cols="50">Write in Candidate</textarea>
+  <label>When did you start playing Smash?</label>
+  <input type="date" name="date">
 </div>
+
+<div>
+<textarea name="Comments" rows="10" cols="50">Comments</textarea>
+</div>
+
+<button type="submit">I'm ready to Smash</button>
 
 </form>
 
