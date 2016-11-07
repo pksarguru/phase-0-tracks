@@ -8,7 +8,6 @@
   margin-top: 50px;
 }
 
-/*.job ul {
-  padding: 20px;
-  margin: 500 0 200 0;
+.job ul {
+  font-size: .8em;
 }
