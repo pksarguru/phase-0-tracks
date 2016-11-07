@@ -1,6 +1,21 @@
 #contact-info {
   font-size: .8em;
 }
+
+#contact-info p a:link {
+    color: orange;
+}
+#contact-info p a:visited {
+    color: green;
+}
+
+#contact-info p a:hover {
+    color: red;
+}
+
+#contact-info p a:active {
+    color: purple;
+}
 .job {
   background-color: #e9e5dc;
   border-radius: 25px;
