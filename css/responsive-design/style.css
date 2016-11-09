@@ -46,22 +46,22 @@ figcaption {
 
 @media screen and (max-width: 340px) {
   body {
-    flex-direction: column; 
+  flex-direction: column;
   }
 
   #link-header {
-    font-size: 20px;
+  font-size: 20px;
   }
 
   #main-header {
-    font-size: 20px;
+  font-size: 20px;
   }
 
 }
 
 @media screen and (min-width: 600px) {
   body {
-    width: 100%;
+  width: 100%;
   }
 }
 
