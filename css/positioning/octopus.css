@@ -1,11 +1,20 @@
-img.octopus {
-  display: block;
-  margin: auto;
-  /*padding-top: 10px;*/
-  z-index: 0;
+.thingie {
+  display: inline-block;
 }
-img.hat{
-  display: block;
-  margin: auto;
-  z-index: 2;
+#octopus {
+  margin: 15px auto 0px auto;
+  z-index: -1;
+  position: absolute;
+  top: 30px;
+  left: 45%;
+}
+#hat{
+  position: absolute;
+  left: 43%;
+}
+
+#glasses {
+  position: absolute;
+  top: 150px;
+  left: 48%;
 }
