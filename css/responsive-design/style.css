@@ -2,6 +2,7 @@ body {
   max-width: 960px;
   display: flex;
   vertical-align: top;
+  margin: auto;
 }
 
 blockquote {
@@ -24,7 +25,7 @@ cite {
 }
 
 main {
-  width: 756px;
+  width: 78%;
 }
 /* you're welcome to edit the
 image, figure, and figcaption CSS if you'd like,
@@ -42,3 +43,25 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
+
+@media screen and (max-width: 340px) {
+  body {
+    flex-direction: column; 
+  }
+
+  #link-header {
+    font-size: 20px;
+  }
+
+  #main-header {
+    font-size: 20px;
+  }
+
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    width: 100%;
+  }
+}
+
