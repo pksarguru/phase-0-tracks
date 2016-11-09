@@ -1,0 +1,11 @@
+img.octopus {
+  display: block;
+  margin: auto;
+  /*padding-top: 10px;*/
+  z-index: 0;
+}
+img.hat{
+  display: block;
+  margin: auto;
+  z-index: 2;
+}
