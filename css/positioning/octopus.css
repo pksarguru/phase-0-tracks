@@ -1,6 +1,7 @@
 .thingie {
   display: inline-block;
 }
+
 #octopus {
   margin: 15px auto 0px auto;
   z-index: -1;
@@ -8,6 +9,7 @@
   top: 30px;
   left: 45%;
 }
+
 #hat{
   position: absolute;
   left: 43%;
