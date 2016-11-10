@@ -14,3 +14,11 @@ font-size: .8em
 .list {
   font-size: .8em;
 }
+
+.list div> li {
+  color: red;
+}
+
+#personal-objective:hover {
+  color: red;
+}
