@@ -12,3 +12,32 @@ if on floor x
 wait for elevator to move
 exit elevator when doors open
 
+
+enter kitchen
+check and see if coffeemaker is on
+if not on turn it on
+if dishwasher is clean 
+	remove clean coffee cup from dishwasher
+otherwise remove clean coffee cup from cabinet
+if no clean coffee cup is in cabinet
+	mentally curse husband and past self
+	wash coffee cup
+place coffee cup on scale
+if scale is off turn on scale
+set scale to grams
+open fridge door
+if no creamer in door
+	mentally yell at husband and past self
+	give up and go back to sleep
+if creamer is in door
+	retrieve creamer
+	pour 15 grams of creamer into coffee cup
+	replace creamer in door
+close fridge
+put coffee cup under spout
+retrieve k-cup
+put k-cup in coffeemaker
+press brew button
+throw out used k-cup
+drink sweet life-giving coffee
+repeat from place coffee cup on scale until awake or run out of creamer and go back to bed
