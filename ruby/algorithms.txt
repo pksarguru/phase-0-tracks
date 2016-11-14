@@ -12,7 +12,7 @@ if on floor x
 wait for elevator to move
 exit elevator when doors open
 
-
+Make Coffee
 enter kitchen
 check and see if coffeemaker is on
 if not on turn it on
