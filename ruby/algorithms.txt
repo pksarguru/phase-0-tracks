@@ -1,0 +1,14 @@
+walk up to wall with elevator
+check to see if elevator light is already lit
+if elevator light is not lit
+	press button
+otherwise wait for elevator to arrive
+walk into elevator
+turn around
+if on ground floor
+	press button for floor x
+if on floor x
+	press button for ground
+wait for elevator to move
+exit elevator when doors open
+
