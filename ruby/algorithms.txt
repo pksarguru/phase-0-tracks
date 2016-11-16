@@ -1,0 +1,35 @@
+- Decide which direction you want to go
+    + If up, press the up arrow
+    + If down, press the down arrow
+- Until elevator door opens, wait
+- When elevator door open, walk through the door and enter the elevator
+- Decide which floor number you want to go to:
+    + If floor button matching desired floor number is lit up, do nothing
+    + else, press button matching desired floor
+- Wait until door opens:
+    + if desired floor, exit elevator
+    + else, wait for desired floor
+
+
+Brushing my teeth:
+- Until toothbrush is seen
+    + look for toothbrush on top of sink
+    + look for toothbrush in cabinet
+    + else quit
+- Grab toothbrush
+- Until toothpaste is seen
+    + look for toothpaste on top of sink
+    + look for toothpaste in cabinet
+    + else quit
+- Grab toothpaste
+- If toothbrush is dirty, rinse under sink
+- Put toothpaste onto toothbrush and open mouth
+- While mouth is dirty
+	- until right side clean, brush right side
+		if mouth fills with foam, spit
+	- until middle clean, brush middle
+		if mouth fills with foam, spit
+	- until left side clean, brush left side
+		if mouth fills with foam, spit
+- Rinse mouth with water, wash toothbrush and store in cabinet
+
