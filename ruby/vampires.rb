@@ -1,12 +1,23 @@
+puts "How many employees will be processed?"
+num = gets.chomp
+
+
+# Main questionnaire
+i=0 
+while i<num.to_i
 puts "What is your name?"
 name = gets.chomp
 puts "How old are you?"
 age = gets.chomp
-puts "Cool. What year were you born? (19xx)"
+while age.to_s.to_i != age
+  puts "Please enter a valid age?"
+  age=gets.chomp
+end 
+puts "Cool. What year were you born? (xxxx)"
 year = gets.chomp
-while 
-  puts "Would you like any garlic bread?  Please answer using 'y' or 'n'."
-  bread=gets.chomp
+while year.to_s.length != 4
+  puts "Please until a valid date format (xxxx)?"
+  year=gets.chomp
 end 
 puts "Would you like any garlic bread (y/n)?"
 bread = gets.chomp
@@ -19,22 +30,59 @@ insurance = gets.chomp
 while insurance != "y" && insurance != "n"
   puts "Would you like to enroll in the company health insurance?  Please enter 'y' or 'n'."
   insurance=gets.chomp
-end 
-
-
-# Check if the vampire(?) can add...
-
-vampire_age = false
-
-if 2016 - year.to_i == age.to_i
-  vampire_age = true
+end
+puts "One by one, list any allergies you have.  Enter 'done' when finished"
+allergy = gets.chomp
+while allergy.downcase != "done"
+  if allergy.downcase == "sunshine"
+    puts "Probably a vampire"
+    break
+  end
+  puts "One by one, list any allergies you have.  Enter 'done' when finished"
+  allergy = gets.chomp
+end
+i += 1
 end
 
 
-if bread == "y"
-  vampire_bread = true
-else 
-  vampire_bread = false
-end
+# # Check if the vampire(?) can add...
 
-puts vampire_bread
+# age_human = false
+
+# if 2016 - year.to_i == age.to_i
+#   age_human = true
+# end
+
+# # Check if the vampire(?) can likes garlic...
+
+# bread_human = false
+
+# if bread == "y"
+#   bread_human = true
+# end
+
+#  # Check if the vampire(?) is mortal...
+
+# insurance_human = false
+
+# if insurance == "y"
+#   insurance_human = true
+# end
+
+# # Start boolean/vampire check
+
+# vampire = true
+
+# case vampire
+# when age_human && bread_human && insurance_human
+#   puts "Probably not a vampire"
+# when !age_human && !bread_human && !insurance_human
+#   puts "Almost certainly a vampire"
+# when name.downcase == "drake cula" || "tu fang"
+#   puts "Definitely a vampire"
+# else
+#   puts "Results inconclusive"
+# end
+
+# vampire
+
