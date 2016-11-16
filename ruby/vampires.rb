@@ -9,7 +9,7 @@ puts "What is your name?"
 name = gets.chomp
 puts "How old are you?"
 age = gets.chomp
-while age.to_s.to_i != age
+while age.to_i != age.to_i
   puts "Please enter a valid age?"
   age=gets.chomp
 end 
@@ -36,53 +36,58 @@ allergy = gets.chomp
 while allergy.downcase != "done"
   if allergy.downcase == "sunshine"
     puts "Probably a vampire"
+    allergy = true
     break
   end
   puts "One by one, list any allergies you have.  Enter 'done' when finished"
   allergy = gets.chomp
 end
-i += 1
+
+
+
+# Check if the vampire(?) can add...
+
+age_human = false
+
+if 2016 - year.to_i == age.to_i
+  age_human = true
 end
 
+# Check if the vampire(?) can likes garlic...
 
-# # Check if the vampire(?) can add...
+bread_human = false
 
-# age_human = false
+if bread == "y"
+  bread_human = true
+end
 
-# if 2016 - year.to_i == age.to_i
-#   age_human = true
-# end
+ # Check if the vampire(?) is mortal...
 
-# # Check if the vampire(?) can likes garlic...
+insurance_human = false
 
-# bread_human = false
+if insurance == "y"
+  insurance_human = true
+end
 
-# if bread == "y"
-#   bread_human = true
-# end
+# Start boolean/vampire check
 
-#  # Check if the vampire(?) is mortal...
+vampire = true
 
-# insurance_human = false
+case vampire
+when age_human && bread_human && insurance_human
+  puts "Probably not a vampire"
+when !age_human && !bread_human && !insurance_human
+  puts "Almost certainly a vampire"
+when name.downcase == "drake cula" || "tu fang"
+  puts "Definitely a vampire"
+when allergy == true
+  puts "Yea, probably a vampire"
+else
+  puts "Results inconclusive"
+end
 
-# if insurance == "y"
-#   insurance_human = true
-# end
+vampire
 
-# # Start boolean/vampire check
-
-# vampire = true
-
-# case vampire
-# when age_human && bread_human && insurance_human
-#   puts "Probably not a vampire"
-# when !age_human && !bread_human && !insurance_human
-#   puts "Almost certainly a vampire"
-# when name.downcase == "drake cula" || "tu fang"
-#   puts "Definitely a vampire"
-# else
-#   puts "Results inconclusive"
-# end
-
-# vampire
+i += 1
+end
 
