@@ -1,3 +1,42 @@
+header {
+  margin:auto;
+  display: block;
+  background: #f5f5dc;
+  padding: 15px;
+}
+
 body {
-  background-color: blue;
+  font-family: helvetica;
+  padding: 20px;
+}
+
+h2{
+  color: green;
+  font-variant: small-caps;
+  font-weight: 200;
+}
+section {
+  display:inline-block;
+}
+
+section.column-1 {
+  float: left;
+  width: 45%;
+}
+
+section.column-2 {
+  float: right;
+  width: 45%;
+}
+
+footer {
+  clear: both;
+  display: block;
+  margin: auto;
+  padding: 50px;
+}
+
+article:nth-child(even) {
+  background: #f5f5dc;
+  padding: 15px;
 }
