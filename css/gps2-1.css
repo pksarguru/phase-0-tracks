@@ -1,0 +1,35 @@
+body {
+  font-family: sans-serif;
+}
+
+section {
+  display: inline-block;
+  vertical-align: text-top;
+  width: 45%;
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.column-1 {
+  background-color: blue;
+}
+.column-2 {
+  background-color:red;
+} 
+
+/* .column-1 {
+  width: 50%;
+  float: left;
+  background-color: blue;
+}
+
+.column-2 {
+  width: 50%;
+  float: right;
+  background-color: red;
+} 
+
+.wrapper {
+  overflow: auto;
+} */
