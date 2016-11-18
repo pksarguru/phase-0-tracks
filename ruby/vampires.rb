@@ -48,27 +48,18 @@ while i<num.to_i
 
   # Check if the vampire(?) can add...
 
-  age_human = false
+  age_human = 2016-year.to_i == age.to_i
 
-  if 2016 - year.to_i == age.to_i
-    age_human = true
-  end
 
   # Check if the vampire(?) can likes garlic...
 
-  bread_human = false
+  bread_human = bread == "y"
 
-  if bread == "y"
-    bread_human = true
-  end
 
    # Check if the vampire(?) is mortal...
 
-  insurance_human = false
+  insurance_human = insurance == "y"
 
-  if insurance == "y"
-    insurance_human = true
-  end
 
   # Start boolean/vampire check
 
