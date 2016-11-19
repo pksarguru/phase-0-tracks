@@ -9,7 +9,7 @@ def encrypt_loop(encrypt)
             encrypt[index] = encrypt[index].next
             index += 1
         else
-            index+=1
+            index += 1
         end
     end
     p encrypt
@@ -25,7 +25,7 @@ def decrypt_loop(decrypt)
             str ="abcdefghijklmnopqrstuvwxyz"
             new_value = str.index(decrypt[i])
             #change to the new letter
-            new_value =new_value -1
+            new_value = new_value -1
             str[new_value]
             #add letter to new string
             new_string = new_string + str[new_value]
@@ -42,10 +42,10 @@ end
 
 puts "Would you like to encrypt or decrypt?"
 answer = gets.chomp
-    #based on choice run corrseponding method
+    #based on choice run corresponding method
 if answer == "encrypt"
     puts "What would you like to encrypt?"
-    encrypt =gets.chomp
+    encrypt = gets.chomp
     encrypt_loop(encrypt)
 
 elsif answer == "decrypt"
