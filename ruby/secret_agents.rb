@@ -37,5 +37,22 @@ def decrypt_loop(decrypt)
     end
     p new_string
 end
+# Our Driver code
+# Ask user for encryption or decryption
 
-decrypt_loop(encrypt_loop("swordfish"))
+puts "Would you like to encrypt or decrypt?"
+answer = gets.chomp
+    #based on choice run corrseponding method
+if answer == "encrypt"
+    puts "What would you like to encrypt?"
+    encrypt =gets.chomp
+    encrypt_loop(encrypt)
+
+elsif answer == "decrypt"
+    puts "what would you like to decrypt?"
+    decrypt = gets.chomp
+    decrypt_loop(decrypt)
+    # If invalid answer "bye, bye"
+else
+    puts "Sorry, bye"
+end
