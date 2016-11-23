@@ -30,15 +30,26 @@ p name_array
 
 # p name_letters
 
-
-vowels = ['a','e','i','o','u']
-
-name_array.keep_if do |letter|
-  letter = "r"
+def next_vowel(letter)
+  vowels = ['a','e','i','o','u']
+  i = 0
+  while i<vowels.length
+    if letter == vowels[i]
+      letter = vowels[i+1]
+      break
+    else
+      i += 1
+    end
+  end
+  return letter
 end
 
+name_vowels = name_array.map do |letter|
+  next_vowel(letter)
+end
 
-p name_array
+p name_vowels
+
 
 
 
