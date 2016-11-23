@@ -34,7 +34,7 @@ def next_vowel(letter)
   vowels = ['a','e','i','o','u']
   i = 0
   while i<vowels.length
-    if letter == vowels[i]
+    if letter.downcase == vowels[i]
       letter = vowels[i+1]
       break
     else
@@ -44,11 +44,36 @@ def next_vowel(letter)
   return letter
 end
 
-name_vowels = name_array.map do |letter|
+name_array.map! do |letter|
   next_vowel(letter)
 end
 
-p name_vowels
+p name_array
+
+def next_consanant(letter)
+  vowels = ['a','e','i','o','u']
+  i = 0
+  until i>vowels.length
+    if letter.downcase == vowels[i] || letter.downcase == " "
+      break
+    elsif i == 5
+      letter = letter.next
+      if vowels.include?(letter.downcase)
+        letter = letter.next
+      end
+      break
+    else
+      i += 1 
+    end
+  end
+  return letter
+end 
+
+name_array.map! do |letter|
+  next_consanant(letter)
+end
+
+p name_array
 
 
 
