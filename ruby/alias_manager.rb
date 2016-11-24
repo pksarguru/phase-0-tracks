@@ -72,10 +72,40 @@ def flip_name(name)
   #rejoin
   new_name = second_name + ' ' + first_name
   #debug
-  p "#{name} is now #{new_name}"
+  #p "#{name} is now #{new_name}"
 end
 
-flip_name("Erica Forget")
+#p flip_name("Felicia Torres")
+
+#User Interface
+puts "What name shall we base your alias on? (enter quit when you are done)"
+original_name = gets.chomp
+if original_name != "quit"
+  name_hash = {}
+  flip_name(original_name)
+  name_hash.store(original_name, flip_name(original_name))
+  name_hash.each {|key, value| puts "#{key} is also known as #{value}."}
+else
+  #puts "Good choice."
+end
+
+
+# h = { "a" => 100, "b" => 200 }
+# h.each {|key, value| puts "#{key} is #{value}" }
+
+#puts "Do you have any allergies? (please list, otherwise type 'done'.)"
+  # while original_name = gets.chomp
+  #   case original_name
+  #   when ""
+  #     break
+  #   when "sunshine"
+  #     result = 0
+  #     break
+  #   else
+  #     puts "anything else?"
+  #   end
+  # end
+
 
 
 
