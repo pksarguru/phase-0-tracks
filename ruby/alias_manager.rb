@@ -5,8 +5,10 @@
 #substitute the next vowel
 #checking to see if there are not vowels
 #substitute the next consonant
-#edge cases
+#edge cases?
 #using .capitalize at the end
+#rejoin with a space
+#print
 
 def next_vowel(v)
   str = "aeiou"
@@ -36,12 +38,11 @@ end
 
 def flip_name(name)
   new_name = name.downcase.split(" ")
-
 #debugging new_name = ["forget", "erica"]
   first_name = ""
   i = 0
   while i < new_name[0].length
-      if (new_name[0][i]=="a" || new_name[0][i]=="e" || new_name[0][i]=="i" || new_name[0][i]=="o"|| new_name[0][i]=="u")
+      if "aeiou".include? new_name[0][i]
         first_name = first_name + next_vowel(new_name[0][i])
         i += 1
       else
@@ -55,7 +56,7 @@ def flip_name(name)
   second_name = ""
   l = 0
   while l < new_name[1].length
-      if (new_name[1][l]=="a" || new_name[1][l]=="e" || new_name[1][l]=="i" || new_name[1][l]=="o"|| new_name[1][l]=="u")
+      if "aeiou".include? new_name[1][l]
         second_name = second_name + next_vowel(new_name[1][l])
         l += 1
       else
@@ -71,7 +72,7 @@ def flip_name(name)
   #rejoin
   new_name = second_name + ' ' + first_name
   #debug
-  p new_name
+  p "#{name} is now #{new_name}"
 end
 
 flip_name("Erica Forget")
