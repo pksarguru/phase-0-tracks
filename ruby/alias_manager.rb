@@ -8,8 +8,6 @@
 #edge cases
 #using .capitalize at the end
 
-
-
 def next_vowel(v)
   str = "aeiou"
   num = str.index(v)
@@ -19,9 +17,9 @@ def next_vowel(v)
     num = 0
   end
   new_v = str[num]
-  #debug
-  p new_v
 end
+#debugging
+#p next_vowel("a")
 
 def next_consonant(c)
   str = "bcdfghjklmnpqrstvwxyz"
@@ -32,56 +30,134 @@ def next_consonant(c)
     num = 0
   end
   new_c = str[num]
-  #debug
-  p new_c
 end
+#debugging
+#p next_consonant("b")
 
 def flip_name(name)
   new_name = name.downcase.split(" ")
+
+#debugging new_name = ["forget", "erica"]
+  first_name = ""
+  i = 0
+  while i < new_name[0].length
+      if (new_name[0][i]=="a" || new_name[0][i]=="e" || new_name[0][i]=="i" || new_name[0][i]=="o"|| new_name[0][i]=="u")
+        first_name = first_name + next_vowel(new_name[0][i])
+        i += 1
+      else
+        first_name = first_name + next_consonant(new_name[0][i])
+        i += 1
+      end
+  end
+  #debugging
+  #p first_name
+
+  second_name = ""
+  l = 0
+  while l < new_name[1].length
+      if (new_name[1][l]=="a" || new_name[1][l]=="e" || new_name[1][l]=="i" || new_name[1][l]=="o"|| new_name[1][l]=="u")
+        second_name = second_name + next_vowel(new_name[1][l])
+        l += 1
+      else
+        second_name = second_name + next_consonant(new_name[1][l])
+        l += 1
+      end
+  end
+  #debugging
+  #p second_name
   #capitalize first and last name
-  new_name[0] = new_name[0].capitalize!
-  new_name[1] = new_name[1].capitalize!
+  first_name = first_name.capitalize!
+  second_name = second_name.capitalize!
   #rejoin
-  new_name = new_name[1] + ' ' + new_name[0]
+  new_name = second_name + ' ' + first_name
   #debug
   p new_name
 end
 
-def next_vowel(v)
-  str = "aeiou"
-  num = str.index(v)
-  if num != 4
-    num += 1
-  else
-    num = 0
-  end
-  new_v = str[num]
-end
-p next_vowel("a")
+flip_name("Erica Forget")
 
-def next_consonant(c)
-  str = "bcdfghjklmnpqrstvwxyz"
-  num = str.index(c)
-  if num != 20
-    num += 1
-  else
-    num = 0
-  end
-  new_c = str[num]
-end
-p next_consonant("b")
 
-new_name = ["forget", "erica"]
-first_name = ""
-i = 0
-while i < new_name[0].length
-    if (new_name[0][i]=="a" || new_name[0][i]=="e" || new_name[0][i]=="i" || new_name[0][i]=="o"|| new_name[0][i]=="u")
-      first_name = first_name + next_vowel(new_name[0][i])
-      i += 1
-    else
-      first_name = first_name + next_consonant(new_name[0][i])
-      i += 1
-    end
 
-end
-p first_name
+
+
+
+
+
+
+
+
+# def next_vowel(v)
+#   str = "aeiou"
+#   num = str.index(v)
+#   if num != 4
+#     num += 1
+#   else
+#     num = 0
+#   end
+#   new_v = str[num]
+#   #debug
+#   p new_v
+# end
+
+# def next_consonant(c)
+#   str = "bcdfghjklmnpqrstvwxyz"
+#   num = str.index(c)
+#   if num != 20
+#     num += 1
+#   else
+#     num = 0
+#   end
+#   new_c = str[num]
+#   #debug
+#   p new_c
+# end
+
+# def flip_name(name)
+#   new_name = name.downcase.split(" ")
+#   #capitalize first and last name
+#   new_name[0] = new_name[0].capitalize!
+#   new_name[1] = new_name[1].capitalize!
+#   #rejoin
+#   new_name = new_name[1] + ' ' + new_name[0]
+#   #debug
+#   p new_name
+# end
+
+# def next_vowel(v)
+#   str = "aeiou"
+#   num = str.index(v)
+#   if num != 4
+#     num += 1
+#   else
+#     num = 0
+#   end
+#   new_v = str[num]
+# end
+# p next_vowel("a")
+
+# def next_consonant(c)
+#   str = "bcdfghjklmnpqrstvwxyz"
+#   num = str.index(c)
+#   if num != 20
+#     num += 1
+#   else
+#     num = 0
+#   end
+#   new_c = str[num]
+# end
+# p next_consonant("b")
+
+# new_name = ["forget", "erica"]
+# first_name = ""
+# i = 0
+# while i < new_name[0].length
+#     if (new_name[0][i]=="a" || new_name[0][i]=="e" || new_name[0][i]=="i" || new_name[0][i]=="o"|| new_name[0][i]=="u")
+#       first_name = first_name + next_vowel(new_name[0][i])
+#       i += 1
+#     else
+#       first_name = first_name + next_consonant(new_name[0][i])
+#       i += 1
+#     end
+
+# end
+# p first_name
