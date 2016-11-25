@@ -80,31 +80,18 @@ end
 #User Interface
 puts "What name shall we base your alias on? (enter quit when you are done)"
 original_name = gets.chomp
-if original_name != "quit"
-  name_hash = {}
+name_hash = {}
+while original_name != "quit"
   flip_name(original_name)
   name_hash.store(original_name, flip_name(original_name))
-  name_hash.each {|key, value| puts "#{key} is also known as #{value}."}
-else
-  #puts "Good choice."
+  puts name_hash
+  puts "Any other name you'd like to try?"
+  original_name = gets.chomp
 end
-
+name_hash.each {|key, value| puts "#{key} is also known as #{value}."}
 
 # h = { "a" => 100, "b" => 200 }
 # h.each {|key, value| puts "#{key} is #{value}" }
-
-#puts "Do you have any allergies? (please list, otherwise type 'done'.)"
-  # while original_name = gets.chomp
-  #   case original_name
-  #   when ""
-  #     break
-  #   when "sunshine"
-  #     result = 0
-  #     break
-  #   else
-  #     puts "anything else?"
-  #   end
-  # end
 
 
 
