@@ -46,8 +46,6 @@ def fake_name(name)
     letter
   end
 
-  p name_array
-
   final_name = name_array.join.split(' ').rotate.join(' ')
 
   return final_name
