@@ -63,12 +63,15 @@ puts "Enter a name you would like an alias for?  (Type 'quit' when done entering
 name = gets.chomp
 until name == 'quit'
   alias_name = fake_name(name)
-  alias_array << alias_name
   input_array << name
+  alias_array << alias_name
   puts "Enter a name you would like an alias for?  (Type 'quit' when done entering names)"
   name = gets.chomp
 end
 
+input_array.zip(alias_array).each do |input, fake|
+  puts "#{input} turns into #{fakeg}"
+end
 
 
 
