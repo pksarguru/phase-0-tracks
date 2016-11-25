@@ -13,12 +13,10 @@
 # define array with "aeiou"
 # find vowels in split array and set them equal to next index in "aeiou" array
 
-# if letter of an array doesnt equal a vowel, 
+# if letter of an array doesn't equal a vowel, 
 #   set letter equal to next letter, unless it's a vowel
 
 # return name
-
-name = "Felicia Torres"
 
 def fake_name(name)
 
@@ -46,19 +44,32 @@ def fake_name(name)
     letter
   end
 
-  final_name = name_array.join.split(' ').rotate.join(' ')
+  final_name = name_array.join.split(' ')
 
-  return final_name
+  final_name.map! do |letter|
+    letter.capitalize
+  end
+
+  final_name2 = final_name.rotate.join(' ')
+
+  return final_name2
 
 end 
 
-# name_array.map! do |letter|
-#   fake_name(letter)
-# # end
+alias_array = []
+input_array = []
 
-# final_name = name_array.join.split(' ').rotate.join(' ')
+puts "Enter a name you would like an alias for?  (Type 'quit' when done entering names)"
+name = gets.chomp
+until name == 'quit'
+  alias_name = fake_name(name)
+  alias_array << alias_name
+  input_array << name
+  puts "Enter a name you would like an alias for?  (Type 'quit' when done entering names)"
+  name = gets.chomp
+end
 
-p fake_name(name)
+
 
 
 
