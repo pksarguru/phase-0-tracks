@@ -20,60 +20,47 @@
 
 name = "Felicia Torres"
 
-name_array = name.split('')
+def fake_name(name)
 
-p name_array
+  name_array = name.split('')
 
-# name_letters = name_array.map do |name|
-#   name.split('')
-# end
-
-# p name_letters
-
-def next_vowel(letter)
-  vowels = ['a','e','i','o','u']
-  i = 0
-  while i<vowels.length
-    if letter.downcase == vowels[i]
-      letter = vowels[i+1]
-      break
-    else
-      i += 1
-    end
-  end
-  return letter
-end
-
-name_array.map! do |letter|
-  next_vowel(letter)
-end
-
-p name_array
-
-def next_consanant(letter)
-  vowels = ['a','e','i','o','u']
-  i = 0
-  until i>vowels.length
-    if letter.downcase == vowels[i] || letter.downcase == " "
-      break
-    elsif i == 5
-      letter = letter.next
-      if vowels.include?(letter.downcase)
+  name_array.map! do |letter|
+    vowels = ['a','e','i','o','u', 'a']
+    i = 0
+    until i>vowels.length
+      if i == 5
         letter = letter.next
-      end
-      break
-    else
-      i += 1 
+        if vowels.include?(letter.downcase)
+          letter = letter.next
+        end
+        break
+      elsif letter.downcase == vowels[i]
+        letter = vowels[i+1]
+        break
+      elsif letter.downcase == " "
+        break
+      else
+        i += 1 
+      end 
     end
+    letter
   end
-  return letter
+
+  p name_array
+
+  final_name = name_array.join.split(' ').rotate.join(' ')
+
+  return final_name
+
 end 
 
-name_array.map! do |letter|
-  next_consanant(letter)
-end
+# name_array.map! do |letter|
+#   fake_name(letter)
+# # end
 
-p name_array
+# final_name = name_array.join.split(' ').rotate.join(' ')
+
+p fake_name(name)
 
 
 
