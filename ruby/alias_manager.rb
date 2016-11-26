@@ -70,7 +70,7 @@ until name == 'quit'
 end
 
 input_array.zip(alias_array).each do |input, fake|
-  puts "#{input} turns into #{fakeg}"
+  puts "#{input} turns into #{fake}"
 end
 
 
