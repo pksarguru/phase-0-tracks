@@ -44,6 +44,8 @@ def fake_name(name)
     letter
   end
 
+  p name_array 
+
   final_name = name_array.join.split(' ')
 
   final_name.map! do |letter|
@@ -56,22 +58,24 @@ def fake_name(name)
 
 end 
 
-alias_array = []
-input_array = []
+p fake_name("Felicia Torres")
 
-puts "Enter a name you would like an alias for?  (Type 'quit' when done entering names)"
-name = gets.chomp
-until name == 'quit'
-  alias_name = fake_name(name)
-  input_array << name
-  alias_array << alias_name
-  puts "Enter a name you would like an alias for?  (Type 'quit' when done entering names)"
-  name = gets.chomp
-end
+# alias_array = []
+# input_array = []
 
-input_array.zip(alias_array).each do |input, fake|
-  puts "#{input} turns into #{fake}"
-end
+# puts "Enter a name you would like an alias for?  (Type 'quit' when done entering names)"
+# name = gets.chomp
+# until name == 'quit'
+#   alias_name = fake_name(name)
+#   input_array << name
+#   alias_array << alias_name
+#   puts "Enter a name you would like an alias for?  (Type 'quit' when done entering names)"
+#   name = gets.chomp
+# end
+
+# input_array.zip(alias_array).each do |input, fake|
+#   puts "#{input} turns into #{fake}"
+# end
 
 
 
