@@ -37,7 +37,7 @@ genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N
 ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 
 genders.length.times do |i|
-  santas << Santa.new(genders[i], ethnicities[i])
+  santas.push(Santa.new(genders[i], ethnicities[i]))
 end
 
 # PRINT OUTPUT
