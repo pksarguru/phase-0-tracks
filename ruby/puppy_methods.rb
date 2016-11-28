@@ -1,4 +1,5 @@
 class Puppy
+
   def initialize
     puts "Initializing new puppy instance..."
   end
@@ -7,15 +8,19 @@ class Puppy
     puts "I brought back the #{toy}!"
     toy
   end
+
   def speak(num)
     num.times { puts "Woof!" }
   end
+
   def roll_over
     puts "*rolls over*"
   end
+
   def dog_years(human_age)
     human_age * 7
   end
+
   def sic(name)
     puts "#{name} is being horribly attacked by puppy licks!"
   end
