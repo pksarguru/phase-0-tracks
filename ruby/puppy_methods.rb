@@ -20,6 +20,26 @@ class Puppy
     puts "#{name} is being horribly attacked by puppy licks!"
   end
 end
+
+class Human
+
+  def initialize
+    puts "and there was much crying..."
+  end
+
+  def curse(xxx)
+    puts "#{xxx}!! oh my stars and garters!"
+  end
+
+  def flogging_molly(num)
+    print "I like to"
+    num.times {print " drink!"}
+    puts "\nAnd fight!"
+  end
+
+end
+
+
 # Driver Code
 fido = Puppy.new
 toy = "rope bone"
@@ -28,3 +48,14 @@ fido.sic("Ollie")
 p fido.dog_years(11)
 fido.roll_over
 fido.speak(3)
+
+people = []
+50.times do
+  people << Human.new
+end
+
+people.each do |person|
+  person.curse("Sweet Christmas!")
+  person.flogging_molly(3)
+end
+
