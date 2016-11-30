@@ -25,12 +25,47 @@ class Santa
       puts "Gender: #{@gender}"
       puts "Ethnicity: #{@ethnicity}"
       puts "Age: #{@age}"
+      puts "Reindeer Ranking:"
+      @reindeer_ranking.length.times do |i|
+        puts "#{i+1}: #{@reindeer_ranking[i]}"
+      end
+  end
+
+  # getter methods
+
+  def age
+    @age
+  end
+
+  def ethniticity
+    @ethnicity
+  end
+
+  # setter methods
+
+  def celebrate_birthday
+    @age += 1
+  end
+
+  def everyone_celebrate_birthday=(full_array)
+    full_array.each do |i|
+      
+    end
+  end
+
+  def gender=(new_gender)
+    @gender = new_gender
+  end
+
+  def get_mad_at=(reindeer)
+    @reindeer_ranking.delete(reindeer)
+    @reindeer_ranking << reindeer
   end
 
 
 end
 
-# INPUT
+# INPUT/DRIVER CODE
 
 santas = []
 
@@ -41,13 +76,22 @@ ethnicities = ["black", "Latino", "white", "Japanese-African",
 
 genders.length.times do |i|
   santas.push(Santa.new(genders[i], ethnicities[i]))
+  santas[i].celebrate_birthday
 end
+
+santas.last.gender = "definitely female"
+santas.last.get_mad_at = "Dancer"
 
 # PRINT OUTPUT
 
-santas.each do |santa|
-  santa.print
+santas.each do |each_santa|
+  each_santa.print
 end
+
+p santas[0].is_a? Santa
+
+
+
 
 
 
