@@ -1,6 +1,9 @@
 # CLASS
 
 class Santa
+  attr_reader :age :ethnicity
+  attr_accessor :gender :age :reindeer_ranking
+
   def initialize(gender, ethnicity)
     puts "Initializing Santa instance..."
     @gender = gender
@@ -31,30 +34,10 @@ class Santa
       end
   end
 
-  # getter methods
-
-  def age
-    @age
-  end
-
-  def ethniticity
-    @ethnicity
-  end
-
   # setter methods
 
   def celebrate_birthday
     @age += 1
-  end
-
-  def everyone_celebrate_birthday=(full_array)
-    full_array.each do |i|
-      
-    end
-  end
-
-  def gender=(new_gender)
-    @gender = new_gender
   end
 
   def get_mad_at=(reindeer)
