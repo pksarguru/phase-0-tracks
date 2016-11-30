@@ -1,17 +1,17 @@
 # CLASS
 
 class Santa
-  attr_reader :age :ethnicity
-  attr_accessor :gender :age :reindeer_ranking
+  attr_reader :ethnicity
+  attr_accessor :gender, :age, :reindeer_ranking
 
-  def initialize(gender, ethnicity)
+  def initialize(gender, ethnicity, age)
     puts "Initializing Santa instance..."
     @gender = gender
     @ethnicity = ethnicity
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer",
       "Prancer", "Vixen", "Comet", "Cupid", "Donner", 
       "Blitzen"]
-    @age = 0
+    @age = age
   end
 
 
@@ -57,13 +57,13 @@ genders = ["agender", "female", "bigender", "male", "female",
 ethnicities = ["black", "Latino", "white", "Japanese-African", 
   "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 
-genders.length.times do |i|
-  santas.push(Santa.new(genders[i], ethnicities[i]))
-  santas[i].celebrate_birthday
+100.times do |i|
+  santas.push(Santa.new(genders.sample, ethnicities.sample, rand(140)))
 end
 
 santas.last.gender = "definitely female"
 santas.last.get_mad_at = "Dancer"
+santas.last.age = 205
 
 # PRINT OUTPUT
 
@@ -71,7 +71,6 @@ santas.each do |each_santa|
   each_santa.print
 end
 
-p santas[0].is_a? Santa
 
 
 
