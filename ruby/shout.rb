@@ -1,16 +1,41 @@
+# module Shout
+#   def self.yell_angrily(words)
+#     words.upcase + "!!!" + " :("
+#   end
+
+#   def self.yell_happily(words)
+#     words.upcase + "!!!" + " :)"
+#   end
+
+# end
+
 module Shout
-  def self.yell_angrily(words)
+  def yell_angrily(words)
     words.upcase + "!!!" + " :("
   end
 
-  def self.yell_happily(words)
+  def yell_happily(words)
     words.upcase + "!!!" + " :)"
   end
 
 end
 
+class Dad
+  include Shout
+end
+
+class Mom
+  include Shout
+end
+
+
+
 # Driver Code
 
-p git Shout.yell_angrily("I'm angry")
+dad = Dad.new
+p dad.yell_happily("I'm dad")
+p dad.yell_angrily("I'm dad")
 
-p Shout.yell_happily("I'm happy")
+mom = Mom.new
+p mom.yell_angrily("I'm mom")
+p mom.yell_happily("I'm mom")
