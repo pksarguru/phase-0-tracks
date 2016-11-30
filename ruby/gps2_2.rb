@@ -12,7 +12,6 @@ def create_list(g_list, str)
   g_arr = str.split(" ")
   g_arr.each do |item|
     g_list[item] = 1
-    #{carrots: 1, apples: 1}
   end
   g_list
 end
@@ -36,7 +35,6 @@ def remove_item (g_list, d_item)
   g_list.delete(d_item)
 end
 
-
 # Method to update the quantity of an item
 # input: list and the key to update the value
 # steps: pass in list and change
@@ -44,6 +42,21 @@ end
 
 def change_num(g_list, item, num_of)
   add_item_to_list(g_list, item, num_of)
+end
+
+
+# Method to print a list and make it look pretty
+# input: take a list
+# steps: add some lines, add title, loop a list
+# output: print pretty list
+def prn(list)
+  puts "-"*60
+  puts "Next week grocery list:"
+  puts "-"*60
+list.each do |item,num|
+  puts "#{item} qty #{num}"
+  end
+  puts "-"*60
 end
 
 #Driver code
@@ -58,16 +71,11 @@ p g_list
 
 next_week_list = {}
 food = "lemonade tomatoes onions ice-cream"
-p create_list(next_week_list, food)
+prn(create_list(next_week_list, food))
 change_num(next_week_list, "lemonade", 2)
 change_num(next_week_list, "tomatoes", 3)
 change_num(next_week_list, "ice-cream", 4)
-p next_week_list
+prn(next_week_list)
 remove_item(next_week_list, "lemonade")
 change_num(next_week_list, "ice-cream", 1)
-p next_week_list
-
-# Method to print a list and make it look pretty
-# input:
-# steps:
-# output:
+prn(next_week_list)
