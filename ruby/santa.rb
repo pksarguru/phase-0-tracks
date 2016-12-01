@@ -1,5 +1,7 @@
 class Santa
-attr_accessor :age
+  #refactored getter and setter:
+  attr_reader :ethnicity
+  attr_accessor :age, :gender
 
  #method that prints "Initializing Santa instance ..."
   def initialize(gender, ethnicity)
@@ -30,21 +32,37 @@ attr_accessor :age
     @reindeer_ranking << bad_reindeer
   end
 
-  def gender=(new_gender)
-    @gender = new_gender
-  end
+  # old setter code:
+  # def gender=(new_gender)
+  #   @gender = new_gender
+  # end
 
-  def age
-    @age
-  end
-
-  def ethnicity
-    @ethnicity
-  end
+  # old getter code:
+  # def age
+  #   @age
+  # end
+  # def ethnicity
+  #   @ethnicity
+  # end
 
 end
 
 # Driver Code
+santas = []
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+
+50.times do
+  santa = Santa.new(example_genders.sample, example_ethnicities.sample)
+  santa.age= (rand(140))
+  p santa
+  # If I wanted it to be in an array:
+  # santas << santa
+end
+
+
+
+# old test code
 # initialize
 # santa = Santa.new
 # test speak
@@ -52,7 +70,7 @@ end
 # test eat_milk_and_cookies, man do I want cookies!
 # santa.eat_milk_and_cookies("chocolate chip cookie")
 
-# more test code
+# more old test code
 # santas = []
 # santas << Santa.new("agender", "black")
 # santas << Santa.new("female", "Latino")
@@ -63,21 +81,13 @@ end
 # santas << Santa.new("N/A", "N/A")
 # p santas
 
-# santas = []
-# example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
-# example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
-# example_genders.length.times do |i|
-#   santas << Santa.new(example_genders[i], example_ethnicities[i])
-# end
+# more old test code
+# santa = Santa.new("gender fluid", "Mystical Creature (unicorn)")
+# santa.get_mad_at("Vixen")
+# santa.celebrate_birthday
+# santa.gender = "agender"
+# p santa.age
+# p santa.ethnicity
+# p santa
 
-# p santas
-
-# more test code
-santa = Santa.new("gender fluid", "Mystical Creature (unicorn)")
-santa.get_mad_at("Vixen")
-santa.celebrate_birthday
-santa.gender = "agender"
-p santa.age
-p santa.ethnicity
-p santa
 
