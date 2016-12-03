@@ -25,6 +25,10 @@ describe Game do
     expect(game.word[0]).to eq "h"
   end
 
+  it "prints _ for each letter in array" do
+    expect(game.feedback).to eq "_ _ _ "
+  end
+
   # it "subtracts a guess if one is made" do
   #   game.make_a_guess("a")
   #   expect(game.guesses).to eq 5
