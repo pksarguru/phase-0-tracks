@@ -44,6 +44,12 @@ describe Game do
     expect(game.line).to eq "_ a _"
   end
 
+  it "does not count against you if you make the same guess" do
+    game.make_a_guess("a")
+    game.make_a_guess("a")
+    expect(game.guesses).to eq 5
+  end
+
 
 
 
