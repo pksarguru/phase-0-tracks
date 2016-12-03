@@ -11,14 +11,16 @@ class Game
   #   line
   # end
 
-  # def make_a_guess(letter)
-  #   if @word.include?(letter)
-
-  #   else
-  #     feedback
-  #   end
-  #   @guesses = @guesses -1
-  # end
+  def make_a_guess(letter)
+    if @word.include?(letter)
+      @line
+      # @word.index(letter)
+      # @line = ("_ ")
+    else
+      @line
+    end
+    @guesses = @guesses -1
+  end
 
 
 

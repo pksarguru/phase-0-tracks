@@ -29,9 +29,9 @@ describe Game do
     expect(game.line).to eq "_ _ _"
   end
 
-  # it "subtracts a guess if one is made" do
-  #   game.make_a_guess("a")
-  #   expect(game.guesses).to eq 5
-  # end
+  it "subtracts a guess if one is made" do
+    game.make_a_guess("a")
+    expect(game.guesses).to eq 5
+  end
 
 end
