@@ -3,7 +3,8 @@ class Game
   def initialize(word)
     @word = word.split("")
     @guesses = word.length * 2
-    @line = (@word.map {|x| x = "_"}).join(" ")
+    @line_arr = (@word.map {|x| x = "_"})
+    @line = @line_arr.join(" ")
     @guessed_arr = []
   end
 
@@ -14,9 +15,9 @@ class Game
 
   def make_a_guess(letter)
     if @word.include?(letter)
-      @line
-      # @word.index(letter)
-      # @line = ("_ ")
+      @line_arr.delete_at(@word.index(letter))
+      @line_arr.insert(@word.index(letter), letter)
+      @line = @line_arr.join(" ")
     else
       @line
     end
