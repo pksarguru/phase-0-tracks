@@ -34,4 +34,16 @@ describe Game do
     expect(game.guesses).to eq 5
   end
 
+  it "add letter to guessed list" do
+    game.make_a_guess("a")
+    expect(game.guessed_arr).to eq ["a"]
+  end
+
+  # it "deletes a _ and adds a letter to the line" do
+  #   game.make_a_guess("a")
+  #   expect(game.line).to eq "_ a _"
+
+
+
+
 end

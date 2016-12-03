@@ -1,9 +1,10 @@
 class Game
-  attr_reader :guesses, :word, :line
+  attr_reader :guesses, :word, :line, :guessed_arr
   def initialize(word)
     @word = word.split("")
     @guesses = word.length * 2
-    @line = ("_ " * (@word.length - 1)) + ("_")
+    @line = (@word.map {|x| x = "_"}).join(" ")
+    @guessed_arr = []
   end
 
   # def feedback
@@ -19,7 +20,8 @@ class Game
     else
       @line
     end
-    @guesses = @guesses -1
+    @guessed_arr << letter
+    @guesses = @guesses - 1
   end
 
 
