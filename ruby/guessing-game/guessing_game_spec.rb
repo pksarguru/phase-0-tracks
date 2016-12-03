@@ -26,7 +26,7 @@ describe Game do
   end
 
   it "prints _ for each letter in array" do
-    expect(game.feedback).to eq "_ _ _ "
+    expect(game.line).to eq "_ _ _"
   end
 
   # it "subtracts a guess if one is made" do
