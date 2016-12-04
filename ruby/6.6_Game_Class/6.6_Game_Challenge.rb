@@ -21,7 +21,7 @@
 # Methods
 class GuessGame
   attr_accessor :secret_array, :display_array, :is_over, :guess_count,
-                :guessed_letters
+                :guessed_letters, :letter_found
 
   def initialize 
     @guess_count = 0
@@ -45,21 +45,32 @@ class GuessGame
   end
 
   def increment_guess(user_guess)
-    if !@guessed_letters.include?(user_guess)
+    if !@guessed_letters.include?(user_guess) && !@letter_found && @letter
       @guess_count += 1
     end
     @guessed_letters << user_guess
+    puts "You have #{@secret_array.count - @guess_count} guesses left"
     @guess_count
   end
 
-# check if guess is in array
+# check if letter or word
+  def check_letter(user_guess)
+    @letter = user_guess.length == 1
+  end
+
+
+# check if guess is in array, doesn't increment 
 
   def guess_progress(user_guess)
-    check_input(user_guess)
     @letter_found = false
+    check_letter(user_guess)
 
     @secret_array.each_index do |i|
-      if @secret_array[i] == user_guess 
+      if !@letter
+        puts "Invalid input. Please input a letter"
+        @letter_found = true
+        break
+      elsif @secret_array[i] == user_guess 
         @display_array[i] = " #{user_guess} "
         @letter_found = true
       end
@@ -67,19 +78,13 @@ class GuessGame
 
     puts "Sorry. '#{user_guess}' is not in the secret word" if !@letter_found
 
-    check_finish
-    increment_guess(user_guess)
+    if !check_finish
+      increment_guess(user_guess)
+    end 
 
     @display_array
     @is_over
-  end
-
-# Check if guess is a word or letter
-
-  def check_input(user_guess)
-    @letter = user_guess.length == 1
-    puts "This is word!" if !@letter
-  end
+  end 
 
 # Check for end condition: solved/out of guesses
 
@@ -108,26 +113,30 @@ end
 
 
 
-# User Interface:
-# game = GuessGame.new
-# puts "First user: input a secret word"
-# secret_word = gets.chomp
+# Drive Code/User Interface:
+game = GuessGame.new
+puts "First user: input a secret word"
+secret_word = gets.chomp
+system('clear')
 
-# puts "Second user: time to guess the secret word."
-# secret_word_array = game.process_secret(secret_word)
-# initial_display = game.initial_display(secret_word)
-# game.print_array(game.display_array)
+puts "Second user: time to guess the secret word."
+secret_word_array = game.process_secret(secret_word)
+initial_display = game.initial_display(secret_word)
+game.print_array(game.display_array)
 
-# puts "You have #{secret_word.length} guesses."
+puts "You have #{secret_word.length} guesses."
 
-# while !game.is_over
-#   puts "Input a letter or a word."
-#   user_guess = gets.chomp
+while !game.is_over
 
-#   game.guess_progress(user_guess)
-#   game.print_array(game.display_array)
-#   puts "You have #{secret_word.length - game.guess_count} guesses left"
-# end
+  puts "Input a letter or a word."
+  user_guess = gets.chomp
+
+  system('clear')
+
+  game.guess_progress(user_guess)
+  game.print_array(game.display_array)
+
+end
 
 
 
