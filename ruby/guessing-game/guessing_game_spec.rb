@@ -50,8 +50,4 @@ describe Game do
     expect(game.guesses).to eq 5
   end
 
-
-
-
-
 end
