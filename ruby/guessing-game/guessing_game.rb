@@ -8,6 +8,7 @@ class Game
     @line_arr = @word.map {|x| x = "_"}
     @line = @line_arr.join(" ")
     @guessed_arr = []
+    @replace_arr = []
   end
 
   def make_a_guess(letter)
@@ -15,8 +16,9 @@ class Game
       p "You've already guessed that."
     else
       if @word.include?(letter)
-        @line_arr.delete_at(@word.index(letter))
-        @line_arr.insert(@word.index(letter), letter)
+        @replace_arr = @word.each_index.select{|i| @word[i] == letter}
+        @replace_arr.reverse.each {|x| @line_arr.delete_at(x)}
+        @replace_arr.each {|x| line_arr.insert(x, letter)}
         @line = @line_arr.join(" ")
       else
         @line
@@ -32,7 +34,6 @@ end
 puts "Player one, please input a word."
 game = Game.new(STDIN.noecho(&:gets).chomp)
 while !(game.guesses == 0 || game.line_arr == game.word)
-  p game.line
   p "You have #{game.guesses} guesses."
   p "Please guess a letter."
   letter = gets.chomp.downcase
@@ -42,6 +43,5 @@ end
 if game.guesses == 0 && game.line_arr != game.word
   puts "Ha! Ha! You lose. The word you were looking for was #{game.word.join.upcase}!"
 else
- puts "Huzzah! You won!"
+  puts "Huzzah! You won!"
 end
-
