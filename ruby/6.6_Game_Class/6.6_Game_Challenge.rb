@@ -20,7 +20,8 @@
 
 # Methods
 class GuessGame
-  attr_accessor :secret_array, :display_array, :is_over, :guess_count
+  attr_accessor :secret_array, :display_array, :is_over, :guess_count,
+                :guessed_letters
 
   def initialize 
     @guess_count = 0

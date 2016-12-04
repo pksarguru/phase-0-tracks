@@ -10,7 +10,8 @@ describe GuessGame do
   it "test increment of guess count" do
     game_count = GuessGame.new
     game_count.guessed_letters = ['a', 'b', 'c']
-    expect(game_count.increment_guess('d')).to eq
+    expect(game_count.increment_guess('d')).to eq 1
+  end
 
 
 end
