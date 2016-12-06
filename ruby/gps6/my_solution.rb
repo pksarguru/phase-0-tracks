@@ -4,25 +4,27 @@
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
+#Require relative is a path from one directory to another. Requiring is pulling code from one place and adding it to another.
 #
 require_relative 'state_data'
 
 class VirusPredictor
 
+# taking arguments to be used in attributes
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
 
+# pulls predicted deaths and speed of spread and combines the two
   def virus_effects
     predicted_deaths(@population_density, @population, @state)
     speed_of_spread(@population_density, @state)
   end
 
   private
-
+# calculates deaths and based on arguments and prints out data
   def predicted_deaths(population_density, population, state)
     # predicted deaths is solely based on population density
     if @population_density >= 200
@@ -40,7 +42,7 @@ class VirusPredictor
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
 
   end
-
+# predicts the speed of spread based on the pop density and prints it in a string
   def speed_of_spread(population_density, state) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
@@ -69,6 +71,13 @@ end
 # DRIVER CODE
  # initialize VirusPredictor for each state
 
+def total_prediction
+  STATE_DATA.each do |state, state_info|
+    report = VirusPredictor.new(state, STATE_DATA[state][:population_density], STATE_DATA[state][:population])
+    report.virus_effects
+
+  end
+end
 
 alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
 alabama.virus_effects
