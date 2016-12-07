@@ -3,7 +3,7 @@
 // 
 // Input a string
 
-var str = "hello";
+var string = "hello";
 
 // Create function
 //  Create a loop that will run for the length of the inputted string
@@ -12,17 +12,15 @@ var str = "hello";
 //  Make sure the loop returns new string
 
 function reverse(str){
-  // reversestr = "";
+  reversestr = "";
 
-  for (var i=str.length; i>-1; i--) {
-    // reversestr = reversestr + str[i];
-    console.log(str[i])
+  for (var i=str.length-1; i>-1; i--) {
+    reversestr = reversestr + str[i];
   }
 
-  // return reversestr;
+return reversestr;
 
 }
 
-// console.log(reverse("hello"));
-reverse("hello")
+console.log(reverse("hello"));
 
