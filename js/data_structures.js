@@ -12,3 +12,18 @@ for (var i = 0; i < colors.length; i++){
   horseColor[colors[i]] = names[i];
 }
 console.log(horseColor);
+
+function Car(year, model) {
+  this.year = year;
+  this.model = model;
+  this.honk = function(){ console.log("Honk!"); };
+
+}
+
+var aCar = new Car (2001, "PT");
+console.log(aCar.year);
+aCar.honk();
+
+var anotherCar = new Car (2014, "Mini");
+console.log(anotherCar.model);
+anotherCar.honk();
