@@ -22,5 +22,7 @@ return reversestr;
 
 }
 
-console.log(reverse("hello"));
+newstr = reverse("hello");
+
+if (1 == 1) {console.log(newstr)};
 
