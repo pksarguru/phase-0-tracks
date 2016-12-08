@@ -59,6 +59,7 @@ function Car(model, topSpeed, workingOrder) {
 }
 
 var anotherCar = new Car('Hyundai', 65, true);
+console.log(anotherCar);
 anotherCar.gas(4);
 anotherCar.brake(4);
 var Car2 = new Car('BMW', 125, true);
