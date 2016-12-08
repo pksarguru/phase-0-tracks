@@ -9,7 +9,6 @@ horsesColors = {};
 for (i=0; i<colors.length; i++) {
   horsesColors[colors[i]] = names[i];
 
-}
 
 console.log(horsesColors);
 
@@ -60,11 +59,16 @@ function Car(model, topSpeed, workingOrder) {
 
 var anotherCar = new Car('Hyundai', 65, true);
 console.log(anotherCar);
-anotherCar.gas(4);
-anotherCar.brake(4);
-var Car2 = new Car('BMW', 125, true);
-var Car3 = new Car('Pinto', 35, false);
-var Car4 = new Car('Ferrari', 7, true);
-Car2.gas(100);
-Car3.gas(5);
-Car4.brake(12);
+// anotherCar.gas(4);
+// anotherCar.brake(4);
+// var Car2 = new Car('BMW', 125, true);
+// var Car3 = new Car('Pinto', 35, false);
+// var Car4 = new Car('Ferrari', 7, true);
+// Car2.gas(100);
+// Car3.gas(5);
+// Car4.brake(12);
+for (var key in anotherCar){
+  anotherCar[key] = 0;
+}
+console.log(anotherCar);
+
