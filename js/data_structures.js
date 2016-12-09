@@ -15,7 +15,7 @@ console.log(horsesColors);
 // Car constructor features:
 // model
 // top speed
-// speed
+// speed  
 // gas function
 // break function
 
