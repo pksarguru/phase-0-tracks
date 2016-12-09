@@ -105,8 +105,11 @@ var randomInput = function(length){
 
 // console.log(randomInput(3));
 
+// console.log(randomInput(5));
 
-for (i=0; i<5; i++){
+var times = 5;
+
+for (i=0; i<times; i++) {
   rand = Math.floor(Math.random()*3)+1;
   input = randomInput(rand);
   console.log(input);
