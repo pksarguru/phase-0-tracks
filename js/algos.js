@@ -77,12 +77,12 @@ var randomInput = function(length){
 
     for (i=0; i<length; i++) {
       randLength = Math.floor(Math.random()*10)+1;
-      for (i=0; i<randLength; i++){
-        randString = "";
+      randString = "";
+      for (j=0; j<randLength; j++){
         randIndex = Math.floor(Math.random()*26);
         randString = randString + alpha[randIndex];
       }
-    randomArray.push(randString);
+      randomArray.push(randString);
     }
 
     return randomArray;
@@ -101,9 +101,14 @@ var obj2 = {song: 'Gold Digger', giraffe: 'Necky', horse: 'Seabiscuit'};
 
 console.log(match(obj1,obj2));
 
-console.log(randomInput(3));
 
-console.log(randomInput(2));
+for (i=0; i<10; i++){
+  rand = Math.floor(Math.random()*3)+1;
+  input = randomInput(rand);
+  console.log(input);
+  output = longest(input);
+  console.log(output);
+}
 
 
 
