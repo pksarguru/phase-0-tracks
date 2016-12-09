@@ -91,18 +91,22 @@ var randomInput = function(length){
 
 // Driver Code
 
-var names = ['Ed', 'Seabiscuit', 'Skyfall', 'Dog Food'];
+// var names = ['Ed', 'Seabiscuit', 'Skyfall', 'Dog Food'];
 
-console.log(longest(names));
+// console.log(longest(names));
 
-var obj1 = {horse: 'Seabiscuit', movie: 'Skyfall', human: 'Ed'};
-var obj2 = {song: 'Gold Digger', giraffe: 'Necky', horse: 'Seabiscuit'};
-
-
-console.log(match(obj1,obj2));
+// var obj1 = {horse: 'Seabiscuit', movie: 'Skyfall', human: 'Ed'};
+// var obj2 = {song: 'Gold Digger', giraffe: 'Necky', horse: 'Seabiscuit'};
 
 
-for (i=0; i<10; i++){
+// console.log(match(obj1,obj2));
+
+// console.log(randomInput(2));
+
+// console.log(randomInput(3));
+
+
+for (i=0; i<5; i++){
   rand = Math.floor(Math.random()*3)+1;
   input = randomInput(rand);
   console.log(input);
