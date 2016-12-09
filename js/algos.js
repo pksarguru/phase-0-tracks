@@ -25,15 +25,35 @@ var longest = function(stringArray) {
 // Function: determine whether hashes share key-value pair
 // Input: two arrays
 // Steps: define a match variable as false
-//        initiate a loop that will run for the length of hash1
-//          initiate another loop that will run for the length of hash2
-//             if the key and value match, set match variable to true
+//        initiate a loop that will run for the length of object1
+//          create a variable equal to the key of object1
+//          create a variable equal to the value of object1
+//          initiate another loop that will run for the length of object2
+//             create a variable equal to the key of object2
+//             create a variable equal to the value of object2
+//             check if both keys match and both values match
+//                if so, set match variable to true
 // Output: match variable
 
-var match = function(hash1, hash2) {
-  match = false;
+var match = function(obj1, obj2) {
+  isMatch = false;
 
-  for (i=0; i<hash1.length)
+  for (i=0; i<Object.keys(obj1).length; i++){
+
+    firstKey = Object.keys(obj1)[i];
+    firstValue = Object.values(obj1)[i];
+
+    for (j=0; j<Object.keys(obj2).length; j++){
+
+      secondKey = Object.keys(obj2)[j];
+      secondValue = Object.values(obj2)[j];
+
+      if (firstKey == secondKey && firstValue == secondValue){
+        isMatch = true;
+      }
+    }
+  }
+  return isMatch;
 }     
 
 // Driver Code
@@ -41,6 +61,12 @@ var match = function(hash1, hash2) {
 var names = ['Ed', 'Seabiscuit', 'Skyfall', 'Dog Food'];
 
 console.log(longest(names));
+
+var obj1 = {horse: 'Seabiscuit', movie: 'Skyfall', human: 'Ed'};
+var obj2 = {song: 'Gold Digger', giraffe: 'Necky', horse: 'Seabiscuit'};
+
+
+console.log(match(obj1,obj2));
 
 
 
