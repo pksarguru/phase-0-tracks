@@ -8,14 +8,14 @@ horsesColors = {};
 
 for (i=0; i<colors.length; i++) {
   horsesColors[colors[i]] = names[i];
-
+}
 
 console.log(horsesColors);
 
 // Car constructor features:
 // model
 // top speed
-// speed
+// speed  
 // gas function
 // break function
 
@@ -52,8 +52,8 @@ function Car(model, topSpeed, workingOrder) {
     }
     else {
       console.log('Your ' + model + ' is not moving.');
-  }
     }
+  }
 
 }
 
@@ -67,8 +67,9 @@ console.log(anotherCar);
 // Car2.gas(100);
 // Car3.gas(5);
 // Car4.brake(12);
-for (var key in anotherCar){
-  anotherCar[key] = 0;
-}
+// for (var key in anotherCar){
+//   anotherCar[key] = 0;
+// }
 console.log(anotherCar);
+
 
