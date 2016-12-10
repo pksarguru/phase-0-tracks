@@ -12,7 +12,7 @@ var longest = function(stringArray) {
 
   longeststr = "";
 
-  for (i=0; i<stringArray.length; i++) {
+  for (var i=0; i<stringArray.length; i++) {
     if (stringArray[i].length > longeststr.length) {
       longeststr = stringArray[i];
     }
@@ -38,12 +38,12 @@ var longest = function(stringArray) {
 var match = function(obj1, obj2) {
   isMatch = false;
 
-  for (i=0; i<Object.keys(obj1).length; i++){
+  for (var i=0; i<Object.keys(obj1).length; i++){
 
     firstKey = Object.keys(obj1)[i];
     firstValue = Object.values(obj1)[i];
 
-    for (j=0; j<Object.keys(obj2).length; j++){
+    for (var j=0; j<Object.keys(obj2).length; j++){
 
       secondKey = Object.keys(obj2)[j];
       secondValue = Object.values(obj2)[j];
@@ -69,16 +69,16 @@ var match = function(obj1, obj2) {
 //            add letter with rand index of alphabet string to string variable
 //          push string to random array
 
-var randomInput = function(length){
+var randomInput = function(length) {
 
     randomArray = [];
 
     alpha = "abcdefghijklmnopqrstuvwxyz";
 
-    for (i=0; i<length; i++) {
+    for (var i=0; i<length; i++) {
       randLength = Math.floor(Math.random()*10)+1;
       randString = "";
-      for (j=0; j<randLength; j++){
+      for (var j=0; j<randLength; j++){
         randIndex = Math.floor(Math.random()*26);
         randString = randString + alpha[randIndex];
       }
@@ -105,16 +105,17 @@ var randomInput = function(length){
 
 // console.log(randomInput(3));
 
-// console.log(randomInput(5));
+// var rand = Math.floor(Math.random()*3)+1;
 
-var times = 5;
+// console.log(randomInput(rand));
 
-for (i=0; i<times; i++) {
-  rand = Math.floor(Math.random()*3)+1;
-  input = randomInput(rand);
-  console.log(input);
-  output = longest(input);
-  console.log(output);
+
+for (var i=0; i<10; i++) {
+  var rand = Math.floor(Math.random()*10)+1;
+  var input = randomInput(rand);
+  console.log(i+1 + ': This is your random input array: ' + input);
+  var output = longest(input);
+  console.log(i+1 + ': This is the longest entry in the array: ' + output);
 }
 
 
