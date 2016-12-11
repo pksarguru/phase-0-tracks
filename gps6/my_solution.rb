@@ -97,9 +97,9 @@ end
 
 # Reflection
 
-1. The parent hash syntax uses strings as keys and the nested hashes use symbols as keys
+# 1. The parent hash syntax uses strings as keys and the nested hashes use symbols as keys
 
-2. 
+# 2. 
 
 
 
