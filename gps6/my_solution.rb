@@ -99,7 +99,13 @@ end
 
 # 1. The parent hash syntax uses strings as keys and the nested hashes use symbols as keys
 
-# 2. 
+# 2. require_relative includes code from a file located in the same directory.  'require' allows you to provide an absolute path to a file located anywhere on your computer
+
+# 3. You can use .each_pair/.each
+
+# 4. The state of instance methods is constant over the entire class, so there is no need to call in arguments within a class contained function.  
+
+# 5. Learning about pry was pretty amazing.  It's already helped me understand assigning parameters within a loop.  I've also consistently had problems conceptualizing accessing parts of a hash.  For whatever reason the concepts just have become second nature in the way they have for arrays.  I felt more comfortable iterating through hashes and accessing different parts of the hash in this challenge.
 
 
 
