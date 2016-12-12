@@ -14,37 +14,62 @@ function phrase(array) {
 }
 
 // create a function that takes two objects
+// find the keys of the two objects
+// have a place to store keys if they match
 // loop through the objects comparing all the keys
+  // compare the key of the first object with all of the keys of the second object
+    // then loop move one down the first object and do it again
+    // (like a minute hand and an hour hand in a clock)
+  // if there is the same key in both objects then check the values
 function match(objOne, objTwo) {
-  this.objOneKeys = Object.keys(objOne);
-  this.objTwoKeys = Object.keys(objTwo);
-  // a place to store keys if they match
-  this.matchKey = [];
+  var objOneKeys = Object.keys(objOne);
+  var objTwoKeys = Object.keys(objTwo);
+  var matchKey = [];
 
-  // compare the key at the 0th place of the first object to all of the places in the second object,
-  // and only then will you go to the 1st place in the first object
-  // (like a minute hand and an hour hand in a clock)
-  for (var i = this.objOneKeys.length - 1; i >= 0; i--){
-    for (var j = this.objOneKeys.length - 1; j >= 0; j--){
-      if (this.objOneKeys[i] === this.objTwoKeys[j]){
-        this.matchKey.push(this.objOneKeys[i]);
-        // debugging console.log(this.matchKey);
+
+  for (var i = objOneKeys.length - 1; i >= 0; i--){
+    for (var j = objOneKeys.length - 1; j >= 0; j--){
+      if (objOneKeys[i] === objTwoKeys[j]){
+        matchKey.push(objOneKeys[i]);
+        // debugging console.log(matchKey);
       }
     }
-    if (this.matchKey === []){
+    if (matchKey === []){
       return false;
     }
   }
-  // if there is the same key in both objects then check the values
   for (var x = 0; x <= this.matchKey.length; x++){
-    if (objOne[this.matchKey[x]] === objTwo[this.matchKey[x]]){
-      // debugging console.log(objOne[this.matchKey[x]])
+    if (objOne[matchKey[x]] === objTwo[matchKey[x]]){
+      // debugging console.log(objOne[matchKey[x]])
       return true;
     } else {
       return false;
     }
   }
 }
+
+// create a function that takes an interger
+// that sets the the number of strings in the array
+// loop over the alphabet to pick letters randomly
+// add those letters to the word that's length is randomly defined from 1-10
+// loop again to add the words to the array
+function randomArray(num){
+  var arrayOfStrings = [];
+  var alphabet = "abcdefghijklmnopqrstuvwxyz";
+  for (var j = 0; j < num; j++){
+    var word = "";
+    for (var i = 0; i < (Math.floor(Math.random() * 10 ) + 1); i++){
+      word += alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+      console.log(word);
+    }
+    console.log(word);
+    arrayOfStrings.push(word);
+  }
+  return arrayOfStrings;
+}
+
+//debugging randomArray(3);
+
 
 // Driver code for phrase function
 test_arr = ["long phrase","longest phrase","longer phrase"];
@@ -62,3 +87,4 @@ console.log(match(a, b)); // => true
 var c = {name: "moon moon", age: 2, blah: "blah blah"};
 var d = {name: "Joe", age: 74, blah: "deblah blah"};
 console.log(match(c, d)); // =>false
+
