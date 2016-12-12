@@ -3,15 +3,15 @@
   // check the length of each string against the string that came before
   // keep that string if longer, ignore it if shorter
   // when you get to the end of the array return the last thing you kept
-function phrase(array) {
-  longestString = "";
-  array = array;
+function longestWord(array) {
+  var longestString = "";
+  var array = array;
   for (var i = 0; i < array.length; i++){
     if (array[i].length >= longestString.length) {
       longestString = array[i];
     }
   }
-  console.log(longestString);
+  return longestString;
 }
 
 // create a function that takes two objects
@@ -70,11 +70,11 @@ function randomArray(num){
 
 // Driver code for phrase function
 test_arr = ["long phrase","longest phrase","longer phrase"];
-phrase(test_arr); // => longest phrase
+console.log(longestWord(test_arr)); // => longest phrase
 test = ["one", "2", "three"];
-phrase(test); // => three
+console.log(longestWord(test)); // => three
 snake = ["snake", "snaake", "snaaaaaake!", "mushroom mushroom"];
-phrase(snake); // => mushroom mushroom
+console.log(longestWord(snake)); // => mushroom mushroom
 
 // Driver code for match function
 var a = {name: "Steven", age: 54};
@@ -89,5 +89,5 @@ console.log(match(c, d)); // =>false
 for (var i = 0; i < 10; i++){
   var someArray = randomArray(3);
   console.log(someArray);
-  console.log (phrase(someArray));
+  console.log (longestWord(someArray));
 }
