@@ -1,15 +1,16 @@
+// create a function
+  // loop through the array
+  // check the length of each string against the string that came before
+  // keep that string if longer, ignore it if shorter
+  // when you get to the end of the array return the last thing you kept
 function phrase(array) {
   longestString = "";
-  this.array = array;
-  // loop through the array
-  for (var i = 0; i < this.array.length; i++){
-    // check the length of each string against the string that came before
-    if (this.array[i].length >= longestString.length) {
-      // keep that string if longer, ignore it if shorter
-      longestString = this.array[i];
+  array = array;
+  for (var i = 0; i < array.length; i++){
+    if (array[i].length >= longestString.length) {
+      longestString = array[i];
     }
   }
-  // when you get to the end of the array return the last thing you kept
   console.log(longestString);
 }
 
@@ -31,16 +32,14 @@ function match(objOne, objTwo) {
     for (var j = objOneKeys.length - 1; j >= 0; j--){
       if (objOneKeys[i] === objTwoKeys[j]){
         matchKey.push(objOneKeys[i]);
-        // debugging console.log(matchKey);
       }
     }
     if (matchKey === []){
       return false;
     }
   }
-  for (var x = 0; x <= this.matchKey.length; x++){
+  for (var x = 0; x <= matchKey.length; x++){
     if (objOne[matchKey[x]] === objTwo[matchKey[x]]){
-      // debugging console.log(objOne[matchKey[x]])
       return true;
     } else {
       return false;
@@ -60,9 +59,7 @@ function randomArray(num){
     var word = "";
     for (var i = 0; i < (Math.floor(Math.random() * 10 ) + 1); i++){
       word += alphabet.charAt(Math.floor(Math.random() * alphabet.length));
-      console.log(word);
     }
-    console.log(word);
     arrayOfStrings.push(word);
   }
   return arrayOfStrings;
@@ -88,3 +85,9 @@ var c = {name: "moon moon", age: 2, blah: "blah blah"};
 var d = {name: "Joe", age: 74, blah: "deblah blah"};
 console.log(match(c, d)); // =>false
 
+// Driver code for putting it all together
+for (var i = 0; i < 10; i++){
+  var someArray = randomArray(3);
+  console.log(someArray);
+  console.log (phrase(someArray));
+}
