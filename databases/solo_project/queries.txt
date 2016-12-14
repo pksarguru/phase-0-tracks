@@ -1,0 +1,218 @@
+1.Display the information in one table (either table is fine).
+SELECT * FROM family_and_friends;                                       
+1|Marisa|true|100|1
+2|Nicholas|true|100|3
+3|Mom Cavin|true|25|1
+4|Dad Cavin|true|100|1
+5|Mom Forget|true|25|2
+6|Dad Forget|true|100|2
+7|Fran Forget|true|25|2
+8|Alex|true|25|2
+9|Sydney|true|25|2
+10|Zoey|true|25|2
+11|Amy Forget|true|25|2
+12|Kaia|true|25|2
+13|Hunter|true|25|2
+14|Erin and Andy|true|50|3
+15|Nikhil|true|25|2
+16|Sara and Patrick|true|25|3
+17|Rob|true|25|3
+18|Fran and J|true|50|3
+
+2.Update an item that meets some condition (you can choose a condition that makes sense).
+UPDATE family_and_friends SET price_limit=15 WHERE name="Amy Forget”;(Nothing was returned so ran below to double check it worked.)
+SELECT * FROM family_and_friends WHERE name="Amy Forget";                                          11|Amy Forget|true|15|2
+
+3. Display the information in both tables using one query.
+SELECT * FROM family_and_friends, responsible WHERE family_and_friends.responsible_id = responsible.id;
+1|Marisa|true|100|1|1|Erica
+2|Nicholas|true|100|3|3|Both
+3|Mom Cavin|true|25|1|1|Erica
+4|Dad Cavin|true|100|1|1|Erica
+5|Mom Forget|true|25|2|2|Brian
+6|Dad Forget|true|100|2|2|Brian
+7|Fran Forget|true|25|2|2|Brian
+8|Alex|true|25|2|2|Brian
+9|Sydney|true|25|2|2|Brian
+10|Zoey|true|25|2|2|Brian
+11|Amy Forget|true|15|2|2|Brian
+12|Kaia|true|25|2|2|Brian
+13|Hunter|true|25|2|2|Brian
+14|Erin and Andy|true|50|3|3|Both
+15|Nikhil|true|25|2|2|Brian
+16|Sara and Patrick|true|25|3|3|Both
+17|Rob|true|25|3|3|Both
+18|Fran and J|true|50|3|3|Both
+
+4. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+SELECT family_and_friends.name, family_and_friends.price_limit, responsible.name FROM family_and_friends JOIN responsible ON family_and_friends.responsible_id = responsible.id;
+Marisa|100|Erica
+Nicholas|100|Both
+Mom Cavin|25|Erica
+Dad Cavin|100|Erica
+Mom Forget|25|Brian
+Dad Forget|100|Brian
+Fran Forget|25|Brian
+Alex|25|Brian
+Sydney|25|Brian
+Zoey|25|Brian
+Amy Forget|15|Brian
+Kaia|25|Brian
+Hunter|25|Brian
+Erin and Andy|50|Both
+Nikhil|25|Brian
+Sara and Patrick|25|Both
+Rob|25|Both
+Fran and J|50|Both
+
+5.Delete an item that meets some condition (you can choose a condition that makes sense).
+DELETE FROM family_and_friends WHERE name="Fran and J"; (Nothing was returned.)
+
+Release 3:
+Cross Join
+SELECT family_and_friends.name, family_and_friends.price_limit, responsible.name FROM family_and_friends CROSS JOIN responsible;
+Marisa|100|Erica
+Marisa|100|Brian
+Marisa|100|Both
+Nicholas|100|Erica
+Nicholas|100|Brian
+Nicholas|100|Both
+Mom Cavin|25|Erica
+Mom Cavin|25|Brian
+Mom Cavin|25|Both
+Dad Cavin|100|Erica
+Dad Cavin|100|Brian
+Dad Cavin|100|Both
+Mom Forget|25|Erica
+Mom Forget|25|Brian
+Mom Forget|25|Both
+Dad Forget|100|Erica
+Dad Forget|100|Brian
+Dad Forget|100|Both
+Fran Forget|25|Erica
+Fran Forget|25|Brian
+Fran Forget|25|Both
+Alex|25|Erica
+Alex|25|Brian
+Alex|25|Both
+Sydney|25|Erica
+Sydney|25|Brian
+Sydney|25|Both
+Zoey|25|Erica
+Zoey|25|Brian
+Zoey|25|Both
+Amy Forget|15|Erica
+Amy Forget|15|Brian
+Amy Forget|15|Both
+Kaia|25|Erica
+Kaia|25|Brian
+Kaia|25|Both
+Hunter|25|Erica
+Hunter|25|Brian
+Hunter|25|Both
+Erin and Andy|50|Erica
+Erin and Andy|50|Brian
+Erin and Andy|50|Both
+Nikhil|25|Erica
+Nikhil|25|Brian
+Nikhil|25|Both
+Sara and Patrick|25|Erica
+Sara and Patrick|25|Brian
+Sara and Patrick|25|Both
+Rob|25|Erica
+Rob|25|Brian
+Rob|25|Both
+
+Inner Join (NOTE: is the same as Join)
+SELECT family_and_friends.name, responsible.name FROM family_and_friends INNER JOIN responsible ON family_and_friends.responsible_id = responsible.id;
+Marisa|Erica
+Nicholas|Both
+Mom Cavin|Erica
+Dad Cavin|Erica
+Mom Forget|Brian
+Dad Forget|Brian
+Fran Forget|Brian
+Alex|Brian
+Sydney|Brian
+Zoey|Brian
+Amy Forget|Brian
+Kaia|Brian
+Hunter|Brian
+Erin and Andy|Both
+Nikhil|Brian
+Sara and Patrick|Both
+Rob|Both
+
+Left Outer Join
+SELECT family_and_friends.name, family_and_friends.need_gift, responsible.name FROM family_and_friends LEFT OUTER JOIN responsible ON family_and_friends.responsible_id = responsible.id;
+Marisa|true|Erica
+Nicholas|true|Both
+Mom Cavin|true|Erica
+Dad Cavin|true|Erica
+Mom Forget|true|Brian
+Dad Forget|true|Brian
+Fran Forget|true|Brian
+Alex|true|Brian
+Sydney|true|Brian
+Zoey|true|Brian
+Amy Forget|true|Brian
+Kaia|true|Brian
+Hunter|true|Brian
+Erin and Andy|true|Both
+Nikhil|true|Brian
+Sara and Patrick|true|Both
+Rob|true|Both
+
+Full Outer Join
+SELECT family_and_friends.name, responsible.name FROM family_and_friends FULL OUTER JOIN responsible ON family_and_friends.responsible_id = responsible.id;
+Error: RIGHT and FULL OUTER JOINs are not currently supported <— So that’s weird. But according to this site: https://www.tutorialspoint.com/sqlite/sqlite_using_joins.htm
+The OUTER JOIN is an extension of the INNER JOIN. Though SQL standard defines three types of OUTER JOINs: LEFT, RIGHT, and FULL but SQLite only supports the LEFT OUTER JOIN.
+
+
+
+
+
+
+
+
+This isn’t actually needed for the challenge, but I wanted a place to put this since I wrote it out first (to make sure there weren’t any mistakes) and then entered it.
+
+CREATE TABLE family_and_friends (
+id INTEGER PRIMARY KEY,
+name VARCHAR(255),
+need_gift BOOLEAN,
+price_limit INT,
+responsible_id INT,
+FOREIGN KEY (responsible_id) REFERENCES responsible(id)
+);
+
+CREATE TABLE responsible (
+id INTEGER PRIMARY KEY,
+name VARCHAR(255)
+);
+
+INSERT INTO responsible (name) VALUES ("Erica");
+INSERT INTO responsible (name) VALUES ("Brian");
+INSERT INTO responsible (name) VALUES ("Both");
+
+
+INSERT INTO family_and_friends (name, need_gift, price_limit, responsible_id) VALUES ("Marisa", "true", 100, 1);
+INSERT INTO family_and_friends (name, need_gift, price_limit, responsible_id) VALUES ("Nicholas", "true", 100, 3);
+INSERT INTO family_and_friends (name, need_gift, price_limit, responsible_id) VALUES ("Mom Cavin", "true", 25, 1);
+INSERT INTO family_and_friends (name, need_gift, price_limit, responsible_id) VALUES ("Dad Cavin", "true", 100, 1);
+INSERT INTO family_and_friends (name, need_gift, price_limit, responsible_id) VALUES ("Mom Forget", "true", 25, 2);
+INSERT INTO family_and_friends (name, need_gift, price_limit, responsible_id) VALUES ("Dad Forget", "true", 100, 2);
+INSERT INTO family_and_friends (name, need_gift, price_limit, responsible_id) VALUES ("Fran Forget", "true", 25, 2);
+INSERT INTO family_and_friends (name, need_gift, price_limit, responsible_id) VALUES ("Alex", "true", 25, 2);
+INSERT INTO family_and_friends (name, need_gift, price_limit, responsible_id) VALUES ("Sydney", "true", 25, 2);
+INSERT INTO family_and_friends (name, need_gift, price_limit, responsible_id) VALUES ("Zoey", "true", 25, 2);
+INSERT INTO family_and_friends (name, need_gift, price_limit, responsible_id) VALUES ("Amy Forget", "true", 25, 2);
+INSERT INTO family_and_friends (name, need_gift, price_limit, responsible_id) VALUES ("Kaia", "true", 25, 2);
+INSERT INTO family_and_friends (name, need_gift, price_limit, responsible_id) VALUES ("Hunter", "true", 25, 2);
+INSERT INTO family_and_friends (name, need_gift, price_limit, responsible_id) VALUES ("Erin and Andy", "true", 50, 3);
+INSERT INTO family_and_friends (name, need_gift, price_limit, responsible_id) VALUES ("Nikhil", "true", 25, 2);
+INSERT INTO family_and_friends (name, need_gift, price_limit, responsible_id) VALUES ("Sara and Patrick", "true", 25, 3);
+INSERT INTO family_and_friends (name, need_gift, price_limit, responsible_id) VALUES ("Rob", "true", 25, 3);
+INSERT INTO family_and_friends (name, need_gift, price_limit, responsible_id) VALUES ("Fran and J", "true", 50, 3);
+
+
