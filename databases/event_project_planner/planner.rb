@@ -12,6 +12,8 @@
 # require gems
 require 'sqlite3'
 require 'faker'
+require 'date'
+#require 'pry'
 
 # will need Faker::Date, Faker::Boolean, Faker::Name?
 # need to create a database
@@ -50,14 +52,51 @@ SQL
 # create a kittens table (if it's not there already)
 db.execute(create_events_table_cmd)
 db.execute(create_projects_table_cmd)
-# # add a test event
+#methods for entering info
 def create_event(db, name, type, date, happened)
-  db.execute("INSERT INTO events (name, type_of_event, date_of_event, has_happened) VALUES (?, ?, ?, ?)" [name, type, date, happened])
+  db.execute("INSERT INTO events (name, type_of_event, date_of_event, has_happened) VALUES (?, ?, ?, ?)", [name, type, date, happened])
 end
 
-create_event(db, 'Christmas2016', 'seasonal', '2016-12-25', 'false')
+def create_project(db, name, type, due, start, done, event_id)
+db.execute("INSERT INTO projects (name, type_of_project, due_date, date_to_start, is_done, event_id) VALUES (?, ?, ?, ?, ?, ?)", [name, type, due, start, done, event_id])
+end
+
+def mark_done(db, id)
+  db.execute("UPDATE projects SET is_done='true' WHERE id = ?", [id])
+end
+
+#querrying
+def what_events(db)
+  db.execute("SELECT events.name, events.date_of_event FROM events;")
+end
+
+def what_projects(db)
+  db.execute("SELECT projects.name, projects.due_date FROM projects;")
+end
+
+def what_to_do(db)
+  db.execute("SELECT events.name, events.date_of_event, projects.name FROM projects JOIN events ON projects.event_id = events.id;")
+end
+
+def when_to_start(db)
+  db.execute("SELECT events.name, projects.name, projects.date_to_start FROM projects JOIN events ON projects.event_id = events.id WHERE is_done = 'false';")
+end
 
 
+# kittens = db.execute("SELECT * FROM kittens")
+# kittens.each do |kitten|
+#  puts "#{kitten['name']} is #{kitten['age']}"
+# end
+
+# create_event(db, 'Christmas2016', 'seasonal', '2016-12-25', 'false')
+# create_project(db, 'scarf', 'knitting', '2016-12-25', '2016-10-1', 'false', 1)
+# mark_done(db, 1)
+# puts what_events(db)
+# puts what_projects(db)
+# puts what_to_do(db)
+# puts when_to_start(db)
+
+puts ""
 
 
 
