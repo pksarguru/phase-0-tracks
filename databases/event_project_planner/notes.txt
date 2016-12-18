@@ -1,0 +1,54 @@
+if I was going to expand the program I’d start with:
+puts "Would you like a list of projects by date to 'start', or date they are 'due'?"
+if gets.chomp == 'start'
+  … finish stuff here.
+
+date = Date.parse(due)
+
+#display by start date
+
+
+
+
+# Enter type of event
+# Enter type of project for the event
+# Enter due date of project
+# Enter date of event
+# User pull up the application and it checks the date now
+# Pulls up by month
+# What is over due ? (optional/unlikely)
+# What to do
+# What has been done
+# What events are happening
+
+#Compute the current date.
+#SELECT date('now');
+# my_time = Time.new(some_sql_retrieval_of_a_time)
+# my_time.strftime("at %I:%M%p")
+#driver code
+# ask for name, type, date of event
+  # convert into exacutiable sqlite3 commands
+# ask for name, type, due date of project,
+  # convert into exicutible sqlite3 commands
+# ask for expected length of time required to finish it (suggest adding another 3rd the time on because good idea)
+  # calculate when to start project and enter it into the date_to_start column
+# allow user to update the status of project finished
+# when done entering info
+# show what projects need started this month
+# show projects that have not been completed, but the due date hasn't passed
+# show what events are happening this month.
+
+# 3 main steps
+# get info from user
+# put info in database
+# querry database for info
+
+# response = some_sql_query
+# p response
+
+# irb(main):006:0> Date.new(2001,2,3)
+# => #<Date: 2001-02-03 ((2451944j,0s,0n),+0s,2299161j)>
+# irb(main):007:0> date = _
+# => #<Date: 2001-02-03 ((2451944j,0s,0n),+0s,2299161j)>
+# irb(main):008:0> date.iso8601
+# => "2001-02-03"
