@@ -18,7 +18,7 @@ require 'date'
 # will need Faker::Date, Faker::Boolean, Faker::Name?
 # need to create a database
 db = SQLite3::Database.new("planner.db")
-#db.results_as_hash = true
+db.results_as_hash = true
 
 #first table needed
 create_events_table_cmd = <<-SQL
@@ -96,7 +96,7 @@ end
 # puts when_to_start(db)
 # puts get_id(db, 'Christmas2016')
 
-puts "Would you like to create an event or a project? (or done to check what you've already entered)"
+puts "Would you like to create an 'event' or a 'project'? (or 'done' to check what you've already entered)"
 answer = gets.chomp
 while answer != "done"
   if answer == "event"
@@ -131,7 +131,8 @@ while answer != "done"
     done = "false"
     puts "What event is this project for?"
     name_of_event = gets.chomp
-    event_id = get_id(db, name_of_event)#.to_i Is this already an int? may cause issue if it is.
+    id_hash = get_id(db, name_of_event)#.to_i Is this already an int? may cause issue if it is.
+    event_id = id_hash[0][0]
     create_project(db, name, type, due, start, done, event_id)
     puts what_projects(db)
   else
@@ -140,14 +141,25 @@ while answer != "done"
   puts "Would you like to create another event or project? (If you are done, type done.)"
   answer = gets.chomp
 end
-
+#
+#puts what_to_do(db)
 print_events = db.execute("SELECT events.event_name, events.type_of_event, events.date_of_event FROM events;")
+p print_events
 print_events.each do |event| #event_name, type_of_event, date_of_event,
-  puts "#{events['event_name']} is a #{events['type_of_event']} type of event on #{events['date_of_event']}."
+  puts "#{event['event_name']} is a #{event['type_of_event']} type of event on #{event['date_of_event']}."
 end
 
 #project_name, type_of_project, due_date, date_to_start, event_id
-# print_projects = db.execute("SELECT projects.project_name, projects.type_of_project, projects.due_date, projects.date_to_start, events.event_name FROM projects JOIN events ON projects.event_id = events.id")
+print_projects = db.execute("SELECT projects.project_name, projects.type_of_project, projects.due_date, projects.date_to_start, events.event_name FROM projects JOIN events ON projects.event_id = events.id")
+p print_projects
+print_projects.each do |project|
+  puts "You want to start #{project['project_name']} by #{project['date_to_start']} so you can be done by #{project['due_date']} in time for #{project['event_name']}."
+end
+
+# puts "Did you want to update any projects? (y/n)"
+# if gets.chomp == "y"
+
+
 # kittens = db.execute("SELECT * FROM kittens")
 # kittens.each do |kitten|
 #  puts "#{kitten['name']} is #{kitten['age']}"
