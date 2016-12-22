@@ -40,3 +40,16 @@ get '/campus/:campus' do
   @students = db.execute("SELECT * FROM students")
   erb :campus
 end
+
+# Complaint form
+get '/complaint/new' do
+  erb :complaint
+end
+
+post '/complaint' do
+  db.execute("INSERT INTO complaints (name, campus, complaint) VALUES (?, ?, ?)", [params['name'], params['campus'], params['complaints']])
+  redirect '/complaint/new'
+
+end
+
+
