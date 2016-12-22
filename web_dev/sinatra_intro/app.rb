@@ -53,8 +53,7 @@ end
 
 # Great Job
 
-get '/great_job' do
-  name = params[:name]
+get '/great_job/:name' do
   if params[:name]
     "Great Job, #{name}!"
   else 
