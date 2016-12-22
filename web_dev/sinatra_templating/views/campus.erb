@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Campus Sort</title>
+</head>
+<body>
+  <h1>List of students in <%= params[:campus]%></h1>
+  <ul> 
+    <% @students.each do |student|%>
+      <% if student['campus'] == params[:campus]    %>
+
+      <li><%= "#{student['name']}, #{student['age']}" %></li>
+      <% end %> 
+    <% end %>
+  </ul>
+
+</body>
+</html>
