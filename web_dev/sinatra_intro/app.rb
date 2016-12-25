@@ -26,7 +26,11 @@ end
 # write a GET route that retrieves
 # all student data
 get '/students' do
-  students = db.execute("SELECT * FROM students")
+  if params[:name] != nil
+    students = db.execute("SELECT * FROM students where name='#{params[:name]}'")
+  else 
+    students = db.execute("SELECT * FROM students")
+  end
   response = ""
   students.each do |student|
     response << "ID: #{student['id']}<br>"
