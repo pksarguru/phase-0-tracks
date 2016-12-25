@@ -53,10 +53,11 @@ end
 
 # Great Job
 
-get '/great_job/:name' do
-  if params[:name]
+get '/great_job/?:name?' do
+  name = params[:name]
+  if name != nil
     "Great Job, #{name}!"
-  else 
+  else
     "Great Job!"
   end
 end
