@@ -26,7 +26,11 @@ end
 # write a GET route that retrieves
 # all student data
 get '/students' do
-  students = db.execute("SELECT * FROM students")
+  if params[:name] != nil
+    students = db.execute("SELECT * FROM students where name='#{params[:name]}'")
+  else 
+    students = db.execute("SELECT * FROM students")
+  end
   response = ""
   students.each do |student|
     response << "ID: #{student['id']}<br>"
@@ -53,10 +57,19 @@ end
 
 # Great Job
 
-get '/great_job/:name' do
-  if params[:name]
+get '/great_job/?:name?' do
+  name = params[:name]
+  if name != nil
     "Great Job, #{name}!"
-  else 
+  else
     "Great Job!"
   end
+end
+
+get '/:num1/add/:num2' do
+  num1 = params[:num1].to_i
+  num2 = params[:num2].to_i
+  result = num1 + num2
+  "#{num1} plus #{num2} equals #{result}"
+
 end
