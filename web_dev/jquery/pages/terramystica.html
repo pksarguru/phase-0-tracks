@@ -3,6 +3,7 @@
 <head>
   <title>Pavan's Terra Mystica Review</title>
   <link rel="stylesheet" type="text/css" href="../style.css">
+  <script type="text/javascript" src=../jquery-3.1.1.min.js></script>
 </head>
 <body>
 
@@ -34,6 +35,8 @@
 
   </section>
 
+  <section id="reveal">Click Here for review</section>
+
   <section class="review">
 
     <h2 class="title">Review</h2>
@@ -42,6 +45,19 @@
     Lorem ipsum dolor sit amet, varius justo sollicitudin feugiat sit, arcu litora vestibulum ante suscipit, vivamus velit velit id sed suspendisse. Risus amet odio mollis inceptos laoreet id, nec sagittis sed urna ac in lorem. Congue ac leo purus donec ante rhoncus, libero quisque tempor sed, erat sed nunc sed neque tincidunt. Ac ac varius suspendisse malesuada sed tellus, consequat lectus vestibulum occaecat morbi, a eu vivamus perspiciatis amet aliquam, volutpat sit posuere ac urna eu, posuere turpis elit. Nulla tellus vel. Vel donec luctus diam elit consectetuer justo, integer integer elit dui lectus metus tristique, mauris dictum donec ultrices, curae ut magna. Blandit magna pellentesque amet vitae ultricies, quis malesuada mauris nulla elementum, praesent tortor rutrum vulputate eu ante nulla, pellentesque auctor mauris sed, et proin rutrum. Interdum nisl tincidunt vitae, curabitur lectus convallis congue, nibh tempor suspendisse id vestibulum, risus iaculis, pretium odio sem sed. Vel eleifend id a imperdiet, vestibulum et, sed vivamus fames convallis sed quis nec, felis ornare mollis varius maecenas.
     </p>
   </section>
+
+  <script>
+    $(function(){
+      $('.review').hide();
+      $('#reveal').click(function() {
+        $('#reveal').hide();
+        $('.review').fadeIn(1000);
+      });
+
+      
+
+    });
+  </script>
 
 </body>
 </html>
